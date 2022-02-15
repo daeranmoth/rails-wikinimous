@@ -1,0 +1,63 @@
+<!-- <%= link_to "create a new article", new_article_path %> -->
+<!-- <ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %>
+    <%= article.content %>
+    <%= link_to "Delete #{article.title}",
+            article_path(article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul> -->
+
+<body cz-shortcut-listen="true">
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Wikinimous</a>
+      <%= link_to "create a new article", new_article_path %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "New article", new_article_path %>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+
+
+  <% @articles.each do |article| %>
+    <article>
+    <h2><%= link_to article.title, article_path(article) %></h2>
+    <p><%= article.content %>
+    <%= link_to "Delete #{article.title}",
+            article_path(article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
+    </article>
+  <% end %>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+<div id="syno-notification-is-installed"></div></body>
